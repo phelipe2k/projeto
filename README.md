@@ -83,4 +83,4 @@ Este projeto está sob a licença MIT. Sinta-se à vontade para usar e modificar
 
 ---
 
-Feito por Warley Phelipe - 2025
+Feito por Warley Phelipe - 2026
