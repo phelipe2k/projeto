@@ -83,9 +83,6 @@ body * {
   background: white var(--switch-bg) no-repeat center;
   border: 0;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   position: absolute;
   top: 50%;
@@ -113,7 +110,9 @@ body * {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border-radius: 9999px;
-  transition: background 0.4s, border-color 0.4s;
+  transition:
+    background 0.4s,
+    border-color 0.4s;
 }
 
 /* Links */
