@@ -23,6 +23,13 @@
   --switch-bg: url(./assets/sun.svg);
 }
 
+/* Fallback for browsers without backdrop-filter support */
+.no-backdrop-filter #switch span,
+.no-backdrop-filter ul li a {
+  background: var(--surface-color);
+  opacity: 0.9;
+}
+
 body {
   /*
   background-image: url(./assets/bg-desktop.jpg);
@@ -98,16 +105,18 @@ body * {
 }
 
 #switch span {
-   display: block;
-   width: 64px;
-   height: 24px;
-   /*surface-color-dark-mode */
-   background: var(--surface-color);
-   border: 1px solid var(--stroke-color);
-   -webkit-backdrop-filter: blur(4px);
-   backdrop-filter: blur(4px);
-   border-radius: 9999px;
-   transition: background 0.4s, border-color 0.4s;
+  display: block;
+  width: 64px;
+  height: 24px;
+  /*surface-color-dark-mode */
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+  transition: background 0.4s, border-color 0.4s;
+  /* Fallback for browsers without backdrop-filter */
+  background: rgba(255, 255, 255, 0.5) var(--surface-color);
 }
 
 ul {
@@ -138,8 +147,8 @@ ul li a {
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
 
-  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 
   text-decoration: none;
   font-weight: 500;
