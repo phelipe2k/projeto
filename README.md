@@ -11,7 +11,7 @@ Um projeto de perfil com links para redes sociais e modo claro/escuro, desenvolv
 O DevLinks é uma página de perfil pessoal que exibe:
 
 - Foto do perfil com alternância entre modo claro e escuro
-- Nome de usuário (@phelipe)
+- Nome de usuário (@phelipe2k)
 - Links para redes sociais (GitHub, LinkedIn, Instagram, Portfólio)
 - Ícones sociais com hover effects
 - Footer com créditos
