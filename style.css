@@ -13,7 +13,6 @@
   --surface-color: rgba(255, 255, 255, 0.5);
   --surface-color-hover: rgba(255, 255, 255, 0.2);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-bg: url(./assets/moon-stars.svg);
 }
 
 .light {
@@ -22,7 +21,6 @@
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(255, 255, 255, 0.9);
   --surface-color-hover: rgba(0, 0, 0, 0.8);
-  --switch-bg: url(./assets/sun.svg);
 }
 
 /* Fallback for browsers without backdrop-filter support */
@@ -75,26 +73,38 @@ body * {
   width: 64px;
   position: relative;
   margin: 4px auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
 }
 
 #switch button {
   width: 32px;
   height: 32px;
-  background: white var(--switch-bg) no-repeat center;
+  background-color: white;
   border: 0;
   border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
 
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   left: 0;
+  transform: translateY(-50%);
   z-index: 1;
 
-  animation: slide-out 0.4s;
+  transition: left 0.4s ease;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  background-image: url("./assets/moon-stars.svg");
 }
 
+/* Light mode - sun icon and move right */
 .light #switch button {
-  animation: slide-in 0.4s forwards;
+  background-image: url("./assets/sun.svg");
+  left: 32px;
 }
 
 #switch button:hover {
@@ -144,37 +154,12 @@ ul li a {
   transition: background 0.2s;
 }
 
-/* links */
-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  padding: 24px 0px;
-}
-
-ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 16px 24px;
-  border-radius: 16px;
-
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-
-  text-decoration: none;
-  font-weight: 500;
-
-  transition: background 0.2s;
-}
-
 ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+ul li a:focus {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
@@ -207,6 +192,16 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  #switch button {
+    animation: none;
+  }
+  .light #switch button {
+    animation: none;
+  }
 }
 
 /* Media queries */

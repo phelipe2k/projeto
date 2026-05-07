@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br" class="light">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,14 +23,16 @@
   <body>
     <div id="container">
     <div id="profile">
-      <img src="./assets/avatar.png" alt="Avatar de Warley Phelipe" />
+      <picture>
+        <source media="(prefers-color-scheme: light)" srcset="./assets/avatar-light.png">
+        <img src="./assets/avatar.png" alt="Avatar de Warley Phelipe" />
+      </picture>
       <p>@phelipe2k</p>
     </div>
 
 
 <div id="switch" onclick="toggleMode()">
-  <button aria-label="Alternar entre modo claro e escuro">
-  </button>
+  <button type="button" aria-label="Alternar entre modo claro e escuro"></button>
   <span></span>
 </div>
 
@@ -49,7 +51,7 @@
         </li>
         <li>
           <a href="https://www.linkedin.com/in/warley-phelipe/" target="_blank" rel="noopener noreferrer"
-            >LinkedIn</a
+            >Linkedin</a
           >
         </li>
         <li>
