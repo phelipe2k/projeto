@@ -93,19 +93,21 @@ body * {
   animation: slide-in 0.4s forwards;
 }
 
-#switch button:hover
+#switch button:hover {
+   outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
-  display: block;
-  width: 64px;
-  height: 24px;
-  /*surface-color-dark-mode */
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  border-radius: 9999px;
+   display: block;
+   width: 64px;
+   height: 24px;
+   /*surface-color-dark-mode */
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   -webkit-backdrop-filter: blur(4px);
+   backdrop-filter: blur(4px);
+   border-radius: 9999px;
+   transition: background 0.4s, border-color 0.4s;
 }
 
 ul {
