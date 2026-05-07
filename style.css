@@ -101,7 +101,7 @@ body * {
 }
 
 #switch button:hover {
-   outline: 8px solid var(--highlight-color);
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -114,7 +114,9 @@ body * {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border-radius: 9999px;
-  transition: background 0.4s, border-color 0.4s;
+  transition:
+    background 0.4s,
+    border-color 0.4s;
   /* Fallback for browsers without backdrop-filter */
   background: rgba(255, 255, 255, 0.5) var(--surface-color);
 }
@@ -135,8 +137,6 @@ ul {
 }
 
 ul li a {
-  border: 1px solid red;
-
   display: flex;
   align-items: center;
   justify-content: center;
